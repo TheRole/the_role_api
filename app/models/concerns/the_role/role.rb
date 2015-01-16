@@ -23,14 +23,27 @@ module TheRole
       validates :title, presence: true, uniqueness: true
       validates :description, presence: true
 
+      # convert JSON that store in DB to Hash with stringify keys
+      def the_role
+        return JSON.load(self[:the_role]).deep_stringify_keys if self[:the_role].is_a? String
+      end
+
+      # when assign value to the_role attribute
+      # convert them to json to save in DB
+      def the_role=(val)
+       self[:the_role] = val.to_json
+      end
+
+
+
       private
 
       before_save do
         self.name = name.to_slug_param(sep: '_')
 
         rules_set     = self.the_role
-        self.the_role = {}.to_json        if rules_set.blank?
-        self.the_role = rules_set.to_json if rules_set.is_a?(Hash)
+        self.the_role = {}      if rules_set.blank?
+        self.the_role = rules_set if rules_set.is_a?(Hash)
       end
 
       after_create do
@@ -50,8 +63,9 @@ module TheRole
 
     # C
     def _jsonable role
-      return role if role.is_a? String
-      role.to_json
+      # return role if role.is_a? String
+      # role.to_json
+      role
     end
 
     def create_section section_name = nil
@@ -72,7 +86,7 @@ module TheRole
       rule_name    = rule_name.to_slug_param(sep: '_')
       section_name = section_name.to_slug_param(sep: '_')
 
-      return true if role[section_name][rule_name]
+      return true if role[section_name].try(:[],rule_name)
       role[section_name][rule_name] = false
       update(the_role: _jsonable(role))
     end
