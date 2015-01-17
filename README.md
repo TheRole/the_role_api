@@ -4,6 +4,8 @@
 
 ### Semantic, Flexible, Lightweight
 
+<img src="./docs/the_role.png" alt="TheRole">
+
 ### INTRO
 
 <table>
@@ -12,10 +14,10 @@
 <th align="left">Description</th>
 </tr>
 <tr>
-<td><img src="https://github.com/the-teacher/the_role/raw/master/Bye_bye_CanCan_I_got_the_Role.png" alt="Bye bye CanCan, I got The Role!"></td>
+<td>1</td>
 <td>TheRole is an authorization library for Ruby on Rails which restricts what resources a given user is allowed to access. All permissions are defined in with 2-level-hash, and stored in the database as a JSON string.<br><br>TheRole - Semantic, lightweight role system with an administrative interface.<br><br>Role is a two-level hash, consisting of the <b>sections</b> and nested <b>rules</b>.<br><br>A <b>Section</b> may be associated with a <b>controller</b> name.<br><br>A <b>Rule</b> may be associated with an <b>action</b> name.<br><br>A Section can have many rules.<br><br>A Rule can be <b>true</b> or <b>false</b>.<br><br><b>Sections</b> and nested <b>Rules</b> provide an <b>ACL</b> (<b>Access Control List</b>)<br><br><br>Using hashes, makes role system extremely easy to configure and use.<br></td>
 </tr>
-</table>  
+</table>
 
 ### GUI
 
@@ -199,7 +201,7 @@ config/routes.rb
 
 ```ruby
   concern :the_role, TheRole::AdminRoutes.new
-  
+
   namespace :admin do
     concerns :the_role
   end
