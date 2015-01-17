@@ -4,6 +4,10 @@ module TheRole
 
     include TheRole::Base
 
+    def the_role= val
+      self[:the_role] = _jsonable val
+    end
+
     def role_hash;
       to_hash;
     end
@@ -49,9 +53,8 @@ module TheRole
     end
 
     # C
-    def _jsonable role
-      return role if role.is_a? String
-      role.to_json
+    def _jsonable val
+      val.is_a?(Hash) ? val.to_json : val.to_s
     end
 
     def create_section section_name = nil
