@@ -1,3 +1,7 @@
+<h2 align="center" class='center' style="text-align:center">
+  TheRole::Api. Role model and general API methods
+</h2>
+
 <p align="center" class='center' style="text-align:center">
   <b>
   Authorization gem for Ruby on Rails<br>
@@ -12,9 +16,15 @@
   <b>Semantic. Flexible. Lightweigh</b>
 </p>
 
+<div align="center" class='center' style="text-align:center">
 
-[![Gem Version](https://badge.fury.io/rb/the_role.png)](http://badge.fury.io/rb/the_role) | [![Build Status](https://travis-ci.org/the-teacher/the_role.png?branch=master)](https://travis-ci.org/the-teacher/the_role) | [![Code Climate](https://codeclimate.com/github/the-teacher/the_role.png)](https://codeclimate.com/github/the-teacher/the_role) | [ruby-toolbox](https://www.ruby-toolbox.com/categories/rails_authorization)
-
+<a href="http://badge.fury.io/rb/the_role"><img src="https://badge.fury.io/rb/the_role.svg" alt="Gem Version" height="18"></a> &nbsp; | &nbsp;
+<a href="https://travis-ci.org/the-teacher/the_role"><img src="https://travis-ci.org/the-teacher/the_role.png?branch=master" alt="Build Status" height="18"></a>
+&nbsp; | &nbsp; 
+<a href="https://codeclimate.com/github/the-teacher/the_role"><img src="https://codeclimate.com/github/the-teacher/the_role.png" alt="Code Climate" height="18"></a>
+&nbsp; | &nbsp; 
+<a href="https://www.ruby-toolbox.com/categories/rails_authorization">ruby-toolbox</a>
+</div>
 
 
 
