@@ -43,12 +43,7 @@ Using hashes, makes role system extremely easy to configure and use
 * A Rule can be <b>true</b> or <b>false</b>
 * <b>Sections</b> and nested <b>Rules</b> provide an <b>ACL</b> (<b>Access Control List</b>)
 
-### API
-
-* [User](#user)
-* [Role](#role)
-
-# API
+# TheRole API
 
 ## User
 
