@@ -1,10 +1,13 @@
-## TheRole. Authorization gem for Ruby on Rails with Administrative interface
-
 <p align="center" class='center' style="text-align:center">
   <img src="./docs/the_role.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
 </p>
+
 <p align="center" class='center' style="text-align:center">
-  <b>Semantic. Flexible. Lightweight</b>
+  <b>
+  Authorization gem for Ruby on Rails<br>
+  with Administrative interface.
+  Semantic. Flexible. Lightweigh<br>
+  </b>
 </p>
 
 
