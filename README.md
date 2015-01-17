@@ -32,13 +32,14 @@
 
 TheRole is an authorization library for Ruby on Rails which restricts what resources a given user is allowed to access. All permissions are defined in with **2-level-hash**, and **stored in the database as a JSON string**.
 
+Using hashes, makes role system extremely easy to configure and use
 
 * Role is a two-level hash, consisting of the <b>sections</b> and nested <b>rules</b>
 * A <b>Section</b> may be associated with a <b>controller</b> name
 * A <b>Rule</b> may be associated with an <b>action</b> name
 * A Section can have many rules
 * A Rule can be <b>true</b> or <b>false</b>
-* <b>Sections</b> and nested <b>Rules</b> provide an <b>ACL</b> (<b>Access Control List</b>)<br><br><br>Using hashes, makes role system extremely easy to configure and use.<br></td>
+* <b>Sections</b> and nested <b>Rules</b> provide an <b>ACL</b> (<b>Access Control List</b>)
 
 ### GUI
 
