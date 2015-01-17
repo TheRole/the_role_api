@@ -33,10 +33,7 @@ module TheRole
   end
 end
 
-_root_ = File.expand_path('../../',  __FILE__)
-
-# # Loading of concerns
-require "#{_root_}/config/routes.rb"
+# _root_ = File.expand_path('../../',  __FILE__)
 
 if defined?(ActiveRecord::Base)
   ActiveRecord::Base.extend TheRole::ActiveRecord
