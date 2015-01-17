@@ -18,9 +18,9 @@
 
 <div align="center" class='center' style="text-align:center">
 
-<a href="http://badge.fury.io/rb/the_role"><img src="https://badge.fury.io/rb/the_role.svg" alt="Gem Version" height="18"></a> &nbsp; 
+<a href="http://badge.fury.io/rb/the_role"><img src="https://badge.fury.io/rb/the_role.svg" alt="Gem Version" height="18"></a> &nbsp;
 <a href="https://travis-ci.org/the-teacher/the_role"><img src="https://travis-ci.org/the-teacher/the_role.png?branch=master" alt="Build Status" height="18"></a>
-&nbsp; 
+&nbsp;
 <a href="https://codeclimate.com/github/the-teacher/the_role"><img src="https://codeclimate.com/github/the-teacher/the_role.png" alt="Code Climate" height="18"></a>
 &nbsp;
 <a href="https://www.ruby-toolbox.com/categories/rails_authorization">ruby-toolbox</a>
@@ -31,6 +31,10 @@
 ### INTRO
 
 TheRole is an authorization library for Ruby on Rails which restricts what resources a given user is allowed to access. All permissions are defined in with **2-level-hash**, and **stored in the database as a JSON string**.
+
+<p align="center" class='center' style="text-align:center">
+  <img src="./docs/hash2string.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
+</p>
 
 Using hashes, makes role system extremely easy to configure and use
 
