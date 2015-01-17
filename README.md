@@ -4,7 +4,7 @@
 
 <p align="center" class='center' style="text-align:center">
   <b>Authorization gem for Ruby on Rails</b><br>
-  <i>with Administrative interface</i>
+  <i>with Management Panel</i>
 </p>
 
 <p align="center" class='center' style="text-align:center">
