@@ -4,6 +4,7 @@ module TheRole
       hash         =  role_hash
       section_name =  section_name.to_slug_param(sep: '_')
       return true  if hash[section_name]
+
       false
     end
 
@@ -17,11 +18,17 @@ module TheRole
 
       return false unless hash[section_name]
       return false unless hash[section_name].key? rule_name
+
       hash[section_name][rule_name]
     end
 
     def any_role? roles_hash = {}
-      roles_hash.each_pair{|section, action| return true if has_role?(section, action)}
+      roles_hash.each_pair do |section, rules|
+        return false unless[ Array, String, Symbol ].include?(rules.class)
+        return has_role?(section, rules) if [ String, Symbol ].include?(rules.class)
+        rules.each{ |rule| return true if has_role?(section, rule) }
+      end
+
       false
     end
 
