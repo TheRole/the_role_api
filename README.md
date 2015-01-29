@@ -161,53 +161,6 @@ new_role_hash = {
 @role.delete_rule(:pages, :show)
 ```
 
-#### Changelog
+### MIT License
 
-* 2.3.0 - Refactoring
-* 2.1.0 - User#any_role? & Role#any?
-* 2.0.3 - create role fix, cleanup
-* 2.0.2 - code cleanup, readme
-* 2.0.1 - code cleanup
-* 2.0.0 - Rails 4 ready, configurable, tests
-* 1.7.0 - mass assignment for User#role_id, doc, locales, changes in test app
-* 1.6.9 - assets precompile addon
-* 1.6.8 - doc, re dependencies
-* 1.6.7 - Es locale (beta 0.2)
-* 1.6.6 - Ru locale, localization (beta 0.1)
-* 1.6.5 - has_section?, fixes, tests (alpha 0.3)
-* 1.6.4 - En locale (alpha 0.2)
-* 1.6.3 - notifications
-* 1.6.0 - stabile release (alpha 0.1)
-
-### i18n
-
-**Ru, En** (by me)
-
-**Es** by @igmarin
-
-**zh_CN** by @doabit & @linjunpop
-
-**PL** by @egb3
-
-### MIT-LICENSE
-
-##### Copyright (c) 2012-2015 [Ilya N.Zykin]
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Copyright (c) 2012-2015 [Ilya N.Zykin]
