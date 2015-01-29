@@ -4,7 +4,7 @@
 
 <p align="center" class='center' style="text-align:center">
   <b>Authorization gem for Ruby on Rails</b><br>
-  <i>with Management Panel</i>
+  <i>with <a href="https://github.com/TheRole/TheRoleManagementPanelBootstrap3">Management Panel</a></i>
 </p>
 
 <p align="center" class='center' style="text-align:center">
