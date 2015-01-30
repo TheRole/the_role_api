@@ -1,3 +1,3 @@
-module TheRole
-  VERSION = "2.8"
+module TheRoleApi
+  VERSION = "3.0"
 end

@@ -4,7 +4,7 @@ require "the_role_api/version"
 
 Gem::Specification.new do |s|
   s.name        = "the_role_api"
-  s.version     = TheRole::VERSION
+  s.version     = TheRoleApi::VERSION
   s.authors     = ["Ilya N. Zykin [the-teacher]"]
   s.email       = ["zykin-ilya@ya.ru"]
   s.homepage    = "https://github.com/TheRole/the_role_api"
