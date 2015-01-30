@@ -1,7 +1,7 @@
-require 'the_role/hash'
-require 'the_role/config'
-require 'the_role/version'
-require 'the_role/activerecord'
+require 'the_role_api/hash'
+require 'the_role_api/config'
+require 'the_role_api/version'
+require 'the_role_api/activerecord'
 
 require 'multi_json'
 require 'the_string_to_slug'
