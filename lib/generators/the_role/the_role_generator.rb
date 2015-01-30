@@ -10,8 +10,6 @@ class TheRoleGenerator < Rails::Generators::NamedBase
       cp_config
     elsif gen_name == 'models'
       cp_models
-    elsif gen_name == 'admin'
-      create_admin_role
     else
       puts 'TheRole Generator - wrong Name'
       puts 'Try to use install'
@@ -34,15 +32,5 @@ class TheRoleGenerator < Rails::Generators::NamedBase
   def cp_config
     copy_file 'config/initializers/the_role.rb',
               'config/initializers/the_role.rb'
-  end
-
-  def create_admin_role
-    puts `clear`
-    unless Role.with_name(:admin)
-      TheRole.create_admin!
-      puts "Admin role created"
-    else
-      puts "Admin role exists"
-    end
   end
 end
