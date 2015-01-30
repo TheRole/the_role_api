@@ -8,7 +8,7 @@ require 'the_string_to_slug'
 
 module TheRole
   class << self
-    def create_admin_role!
+    def create_admin!
       admin_role = ::Role.where(name: :admin).first_or_create!(
           name:        :admin,
           title:       "Role for admin",
