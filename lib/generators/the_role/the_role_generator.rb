@@ -18,8 +18,6 @@ class TheRoleGenerator < Rails::Generators::NamedBase
 
   private
 
-  def root_path; TheRole::Engine.root; end
-
   def gen_name
     name.to_s.downcase
   end

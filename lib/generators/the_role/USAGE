@@ -18,9 +18,6 @@ Generators:
   > bundle exec rails g the_role models
   - Install models
 
-  > bundle exec rails g the_role admin
-  - Create Admin Role
-
   > rake db:roles:admin
   - Create Admin Role
 
