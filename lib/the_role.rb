@@ -36,5 +36,5 @@ end
 # _root_ = File.expand_path('../../',  __FILE__)
 
 if defined?(ActiveRecord::Base)
-  ActiveRecord::Base.extend TheRole::ActiveRecord
+  ActiveRecord::Base.extend TheRole::Api::ActiveRecord
 end

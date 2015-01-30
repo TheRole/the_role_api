@@ -57,7 +57,7 @@ end
 
 ```ruby
 class User < ActiveRecord::Base
-  include TheRole::User
+  include TheRole::Api::User
   # or following alias for AR:
   # has_role
 
@@ -77,7 +77,7 @@ or you can create Role model manually:
 
 ```ruby
 class Role < ActiveRecord::Base
-  include TheRole::Role
+  include TheRole::Api::Role
   # or following alias for AR:
   # acts_as_role
 end

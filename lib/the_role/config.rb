@@ -1,6 +1,6 @@
 module TheRole
   def self.configure(&block)
-    yield @config ||= TheRole::Configuration.new
+    yield @config ||= TheRole::Api::Configuration.new
   end
 
   def self.config
@@ -8,14 +8,16 @@ module TheRole
   end
 
   # Configuration class
-  class Configuration
-    include ActiveSupport::Configurable
-    config_accessor :layout,
-                    :destroy_strategy,
-                    :default_user_role,
-                    :access_denied_method,
-                    :login_required_method,
-                    :first_user_should_be_admin
+  module Api
+    class Configuration
+      include ActiveSupport::Configurable
+      config_accessor :layout,
+                      :destroy_strategy,
+                      :default_user_role,
+                      :access_denied_method,
+                      :login_required_method,
+                      :first_user_should_be_admin
+    end
   end
 
   configure do |config|
