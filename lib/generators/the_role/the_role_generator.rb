@@ -1,5 +1,5 @@
 class TheRoleGenerator < Rails::Generators::NamedBase
-  source_root File.expand_path('../templates', __FILE__)
+  source_root File.expand_path('../../../../', __FILE__)
   # argument :xname, type: :string, default: :xname
 
   def generate_controllers
@@ -27,38 +27,22 @@ class TheRoleGenerator < Rails::Generators::NamedBase
   end
 
   def cp_models
-    copy_file "#{root_path}/app/models/_templates_/role.rb",
-              "app/models/role.rb"
+    copy_file 'app/models/_templates_/role.rb',
+              'app/models/role.rb'
   end
 
   def cp_config
-    copy_file 'the_role.rb', 'config/initializers/the_role.rb'
+    copy_file 'config/initializers/the_role.rb',
+              'config/initializers/the_role.rb'
   end
 
   def create_admin_role
     puts `clear`
-    puts '~'*40
-    puts 'TheRole'
-    puts '~'*40
-
     unless Role.with_name(:admin)
-      role = Role.create(
-        name: :admin,
-        title: "role for admin",
-        description:"this user can do anything"
-      )
-
-      role.create_rule(:system, :administrator)
-      role.rule_on(:system, :administrator)
-
+      TheRole.create_admin!
       puts "Admin role created"
     else
       puts "Admin role exists"
     end
-
-    puts "Now you can makes any user as Admin:"
-    puts "> bin/rails c"
-    puts "> User.first.update( role: Role.with_name(:admin) )"
-    puts '~'*40
   end
 end
