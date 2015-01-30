@@ -1,9 +1,11 @@
 # load 'the_role/hash.rb' - UPDATE, BUT NOT RELOAD [for console testing]
 class Hash
+
   # deep_transform_keys
   # deep_stringify_keys
   # underscorify_keys
   # deep_reset
+
   unless {}.respond_to?(:deep_transform_keys)
     def deep_transform_keys(&block)
       result = {}
