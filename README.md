@@ -52,6 +52,17 @@ It can be usefull for Rails apps based on one engine.
   <img src="./docs/import_export.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
 </div>
 
+### Limitations by Design
+
+TheRole uses few conventions over configuration.
+It gives simplicity of code, but also some limitations.
+You have to know about them before using of TheRole:
+
+0. `User` **has only one** `Role`  (why?)
+0. Only `User` model supported     (why?)
+0. Based on `curent_user` method   (why?)
+0. Role stored in database as a JSON String (why?)
+
 ## Installation
 
 #### Gemfile
@@ -398,17 +409,6 @@ new_role_hash = {
 # delete a rule in section
 @role.delete_rule(:pages, :show)
 ```
-
-### Limitations by Design
-
-TheRole uses few conventions over configuration.
-It gives simplicity of code, but also some limitations.
-You have to know about them before using of TheRole:
-
-0. `User` **has only one** `Role`  (why?)
-0. Only `User` model supported     (why?)
-0. Based on `curent_user` method   (why?)
-0. Role stored in database as a JSON String (why?)
 
 ### MIT License
 
