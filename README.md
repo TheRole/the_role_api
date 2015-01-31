@@ -182,7 +182,7 @@ User.first.admin? # => true
 <hr>
 
 <div align="center" class='center' style="text-align:center">
-  <a href="https://github.com/TheRole/the_role_api/blob/master/docs/IntegrationWithRailsControllers.md"></a>
+  <a href="https://github.com/TheRole/the_role_api/blob/master/docs/IntegrationWithRailsControllers.md">
     <img src="https://raw.githubusercontent.com/TheRole/the_role_api/master/docs/int_ctrl.png" alt="Integration with Rails controllers">
   </a>
 </div>
