@@ -267,7 +267,7 @@ class PagesController < ApplicationController
     permitted_keys.push(:tags)       if current_user.has_role?(:pages, :tags)
     permitted_keys.push(:top_secret) if current_user.admin?
 
-    params.require(:person).permit(permitted_keys)
+    params.require(:page).permit(permitted_keys)
   end
 end
 ```
