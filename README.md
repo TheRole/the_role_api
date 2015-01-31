@@ -183,7 +183,7 @@ User.first.admin? # => true
 
 <div align="center" class='center' style="text-align:center">
   <a href="https://github.com/TheRole/the_role_api/blob/master/docs/TheRoleAPI.md">
-    <img src="https://raw.githubusercontent.com/TheRole/the_role_api/master/docs/api.png" alt="TheRole API">
+    <img src="https://raw.githubusercontent.com/TheRole/the_role_api/master/docs/api.png?1" alt="TheRole API">
   </a>
 </div>
 
