@@ -260,7 +260,7 @@ class PagesController < ApplicationController
   private
 
   def page_params
-    permitted_keys = [:title, :description, :content]
+    permitted_keys = [:title, :intro, :content]
 
     permitted_keys.push(:tags)       if current_user.has_role?(:pages, :tags)
     permitted_keys.push(:top_secret) if current_user.admin?
