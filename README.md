@@ -185,120 +185,13 @@ User.first.admin? # => true
   <img src="./docs/int_ctrl.png" alt="Integration with Rails controllers">
 </div>
 
-### Integration with Rails controllers
-
-<i>application_controller.rb</i>
-
-```ruby
-class ApplicationController < ActionController::Base
-
-  include TheRole::Controller
-
-  protect_from_forgery with: :exception
-  protect_from_forgery
-
-  # ... code ...
-end
-```
-
-Any Rails controller, for instance, `pages_controller.rb`
-
-```ruby
-class PagesController < ApplicationController
-  before_action :login_required, except: [ :index, :show ]
-  before_action :role_required,  except: [ :index, :show ]
-
-  # !!! ATTENTION !!!
-  #
-  # `@owner_check_object` variable have to be instantiated
-  # before check ownership via `owner_required` method.
-  #
-  # You have to instantiate `@owner_check_object` in `set_page` method
-  # See code below
-
-  before_action :set_page,       only: [ :edit, :update, :destroy ]
-  before_action :owner_required, only: [ :edit, :update, :destroy ]
-
-  private
-
-  def set_page
-    @page = Page.find params[:id]
-
-    # TheRole: object for ownership checking
-    @owner_check_object = @page
-  end
-end
-```
-
-Please, learn simple source code of restriction methods:
-
-0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L3">login_required</a>
-0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L16">role_required</a>
-0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L20">owner_required</a>
-
-In this case `login_required` is a method `:authenticate_user!` from Devise gem
-
 <div align="center" class='center' style="text-align:center">
   <img src="./docs/int_views.png" alt="Integration with Rails views">
 </div>
 
-### Integration with Rails views
-
-HAML views:
-
-__case 1__
-
-```haml
-- if current_user
-
-  - # if you are owner and has role
-  - if current_user.owner?(@page) && current_user.has_role?(:pages, :edit)
-    = link_to "Edit this Page", edit_page_path(@page)
-```
-
-__case 2__
-
-```haml
-- if current_user
-
-  - if current_user.any_role?(social_networks: [:twitter_share_button, :facebook_share_button])
-    %h3 You can share this content with Social Networks:
-
-    - if current_user.has_role?(:social_networks, :twitter_share_button)
-      = link_to 'Share with Twitter', '#'
-
-    - if current_user.has_role?(:social_networks, :facebook_share_button)
-      = link_to 'Share with Facebook', '#'
-
-  - if current_user.moderator?(:pages)
-    = link_to 'Manage Pages', admin_pages_path
-
-  - if current_user.admin?
-    = link_to 'Admin Panel', admin_path
-```
-
 <div align="center" class='center' style="text-align:center">
   <img src="./docs/int_params.png" alt="Using with Strong Parameters">
 </div>
-
-### Using with Strong Parameters
-
-```ruby
-class PagesController < ApplicationController
-  # .. code ...
-
-  private
-
-  def page_params
-    permitted_keys = [:title, :intro, :content]
-
-    permitted_keys.push(:tags)       if current_user.has_role?(:pages, :tags)
-    permitted_keys.push(:top_secret) if current_user.admin?
-
-    params.require(:page).permit(permitted_keys)
-  end
-end
-```
 
 ## TheRole API
 
