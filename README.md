@@ -163,7 +163,9 @@ User.first.update( role: Role.with_name(:admin) )
 User.first.admin? # => true
 ```
 
-## Integration with Rails controllers
+<hr>
+
+### Integration with Rails controllers
 
 <i>application_controller.rb</i>
 
@@ -216,7 +218,7 @@ Please, learn simple source code of restriction methods:
 
 In this case `login_required` is a method `:authenticate_user!` from Devise gem
 
-## Integration with Rails views
+### Integration with Rails views
 
 HAML views:
 
@@ -251,7 +253,7 @@ __case 2__
     = link_to 'Admin Panel', admin_path
 ```
 
-## Using with Strong Parameters
+### Using with Strong Parameters
 
 ```ruby
 class PagesController < ApplicationController
