@@ -198,11 +198,13 @@ class PagesController < ApplicationController
 end
 ```
 
+Please, learn simple source code of restriction methods
+
 0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L3">login_required</a>
 0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L16">role_required</a>
 0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L20">owner_required</a>
 
-In this case `login_required` is method from Devise gem `:authenticate_user!`
+In this case `login_required` is method `:authenticate_user!` from Devise gem
 
 ## TheRole API
 
