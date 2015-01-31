@@ -165,6 +165,13 @@ User.first.admin? # => true
 
 <hr>
 
+<center>
+  You are in deal!
+  Thanks for using TheRole!
+</center>
+
+<hr>
+
 ### Integration with Rails controllers
 
 <i>application_controller.rb</i>
