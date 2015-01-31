@@ -1,6 +1,19 @@
+<a href="https://github.com/TheRole/the_role_api">Back to TheRole API</a>
+
+## TheRole Limitations
+
+TheRole uses few conventions over configuration.
+It gives simplicity of code, but also some limitations.
+You have to know about them before using of TheRole:
+
+0. `User` **has only one** `Role`           <a href="https://github.com/TheRole/the_role_api/blob/master/docs/Limitations.md#user-has-only-one-role">Why?</a>
+0. Only `User` model supported              <a href="https://github.com/TheRole/the_role_api/blob/master/docs/Limitations.md#only-user-model-supported">Why?</a>
+0. Based on `curent_user` method            <a href="https://github.com/TheRole/the_role_api/blob/master/docs/Limitations.md#based-on-curent_user-method">Why?</a>
+0. Role stored in database as a JSON String <a href="https://github.com/TheRole/the_role_api/blob/master/docs/Limitations.md#role-stored-in-database-as-a-json-string">Why?</a>
+
 ### `User` **has only one** `Role`
 
-My practice showed, using of many roles for one user is very, very bad approach. In reality, Usually, no one needs it.
+My practice showed, using of many roles for one user is very, very bad approach. In reality, usually, no one needs it.
 
 Many roles for one user is a reason of many logical mistakes. Calculation of permitted actions for user becomes difficult.
 
@@ -21,7 +34,7 @@ If it be really great, I'll add this feature into The Role.
 `curent_user` is a most popular name of method associated with logged user. TheRole uses it by default.
 There is no ways to use something else. Sorry.
 
-### Role stored in database as a JSON String
+### Role stored in database as a JSON string
 
 There are many databases which provide special native ways to work with JSON data.
 
