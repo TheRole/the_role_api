@@ -181,6 +181,10 @@ User.first.admin? # => true
 
 <hr>
 
+<div align="center" class='center' style="text-align:center">
+  <img src="./docs/int_ctrl.png" alt="Integration with Rails controllers">
+</div>
+
 ### Integration with Rails controllers
 
 <i>application_controller.rb</i>
@@ -234,6 +238,10 @@ Please, learn simple source code of restriction methods:
 
 In this case `login_required` is a method `:authenticate_user!` from Devise gem
 
+<div align="center" class='center' style="text-align:center">
+  <img src="./docs/int_views.png" alt="Integration with Rails views">
+</div>
+
 ### Integration with Rails views
 
 HAML views:
@@ -268,6 +276,10 @@ __case 2__
   - if current_user.admin?
     = link_to 'Admin Panel', admin_path
 ```
+
+<div align="center" class='center' style="text-align:center">
+  <img src="./docs/int_params.png" alt="Using with Strong Parameters">
+</div>
 
 ### Using with Strong Parameters
 
