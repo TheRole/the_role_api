@@ -206,6 +206,28 @@ Please, learn simple source code of restriction methods
 
 In this case `login_required` is method `:authenticate_user!` from Devise gem
 
+## Integration with Rails views
+
+
+```haml
+- if current_user
+
+  - if current_user.any_role?(social_networks: [:twitter_share_button, :facebook_share_button])
+    %h3 You can share this content with Social Networks:
+
+    - if current_user.has_role?(:social_networks, :share_button)
+      = link_to 'Share with Twitter', '#'
+
+    - if current_user.has_role?(:social_networks, :facebook_share_button)
+      = link_to 'Share with Facebook', '#'
+
+  - if current_user.moderator?(:pages)
+    = link_to 'Manage Pages', admin_pages_path
+
+  - if current_user.admin?
+    = link_to 'Admin Panel', admin_path
+```
+
 ## TheRole API
 
 ### User
@@ -326,8 +348,9 @@ new_role_hash = {
 
 ### Limitations by Design
 
-0. Only `User` Model supported  (why?)
-0. `User` **has_one** `Role`    (why?)
+0. Only `User` Model supported   (why?)
+0. Based on `curent_user` method (why?)
+0. `User` **has_one** `Role`     (why?)
 0. Role stored in database as a JSON String (why?)
 
 ### MIT License
