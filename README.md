@@ -54,18 +54,27 @@ It can be usefull for Rails apps based on one engine.
 
 ## Installation
 
-**Gemfile**
+#### Gemfile
 
 ```ruby
+# only API
 gem 'the_role_api', '~> 3.0.0'
 ```
 
 or
 
 ```ruby
+# living on bleeding edge
 gem 'the_role_api',
   github: 'TheRole/the_role_api',
   branch: 'master'
+```
+
+or
+
+```ruby
+# API and UI
+gem 'the_role', '~> 3.0.0'
 ```
 
 and after that
