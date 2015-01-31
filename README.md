@@ -125,7 +125,7 @@ bundle exec rails g the_role install
 
 #### Setup TheRole gem
 
-**config/initializers/the_role.rb**
+<i><b>config/initializers/the_role.rb</b></i>
 
 ```ruby
 TheRole.configure do |config|
@@ -154,9 +154,9 @@ User.first.update( role: Role.with_name(:admin) )
 User.first.admin? # => true
 ```
 
-#### Integration with Rails controllers
+## Integration with Rails controllers
 
-**application_controller.rb**
+<i><b>application_controller.rb</b></i>
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -170,7 +170,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-Any Rails controller, for instance, **pages_controller.rb**
+Any Rails controller, for instance, <i><b>pages_controller.rb</b></i>.
 
 ```ruby
 class PagesController < ApplicationController
