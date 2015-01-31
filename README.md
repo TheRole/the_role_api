@@ -161,6 +161,12 @@ new_role_hash = {
 @role.delete_rule(:pages, :show)
 ```
 
+### Limitations by Design
+
+0. Only `User` Model supported  (why?)
+0. `User` **has_one** `Role`    (why?)
+0. Role stored in database as a JSON String (why?)
+
 ### MIT License
 
 Copyright (c) 2012-2015 [Ilya N.Zykin]
