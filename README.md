@@ -182,15 +182,21 @@ User.first.admin? # => true
 <hr>
 
 <div align="center" class='center' style="text-align:center">
-  <img src="./docs/int_ctrl.png" alt="Integration with Rails controllers">
+  <a href="https://github.com/TheRole/the_role_api/blob/master/docs/IntegrationWithRailsControllers.md"></a>
+    <img src="https://raw.githubusercontent.com/TheRole/the_role_api/master/docs/int_ctrl.png" alt="Integration with Rails controllers">
+  </a>
 </div>
 
 <div align="center" class='center' style="text-align:center">
-  <img src="./docs/int_views.png" alt="Integration with Rails views">
+  <a href="https://github.com/TheRole/the_role_api/blob/master/docs/IntegrationWithRailsViews.md">
+    <img src="https://raw.githubusercontent.com/TheRole/the_role_api/master/docs/int_views.png" alt="Integration with Rails views">
+  </a>
 </div>
 
 <div align="center" class='center' style="text-align:center">
-  <img src="./docs/int_params.png" alt="Using with Strong Parameters">
+  <a href="https://github.com/TheRole/the_role_api/blob/master/docs/UsingWithStrongParameters.md">
+    <img src="https://raw.githubusercontent.com/TheRole/the_role_api/master/docs/int_params.png" alt="Using with Strong Parameters">
+  </a>
 </div>
 
 ## TheRole API
