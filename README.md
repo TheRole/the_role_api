@@ -61,7 +61,7 @@ You have to know about them before using of TheRole:
 
 ## Installation
 
-#### Gemfile
+#### 0. Gemfile
 
 ```ruby
 # only API
@@ -81,7 +81,7 @@ and after that
 bundle
 ```
 
-#### Change User migration file
+#### 1. Change User migration file
 
 Add a `role_id:integer` field to your User Model
 
@@ -101,19 +101,19 @@ def self.up
 end
 ```
 
-#### Install TheRole migration file
+#### 2. Install TheRole migration file
 
 ```sh
 bundle exec rake the_role_engine:install:migrations
 ```
 
-#### Invoke migrations
+#### 3. Invoke migrations
 
 ```sh
 rake db:migrate
 ```
 
-#### Change User model
+#### 4. Change User model
 
 ```ruby
 class User < ActiveRecord::Base
@@ -124,13 +124,13 @@ class User < ActiveRecord::Base
 end
 ```
 
-#### Create Role model
+#### 5. Create Role model
 
 ```sh
 bundle exec rails g the_role install
 ```
 
-#### Setup TheRole gem
+#### 6. Setup TheRole gem
 
 <i>config/initializers/the_role.rb</i>
 
@@ -148,7 +148,7 @@ TheRole.configure do |config|
 end
 ```
 
-#### Create admin role
+#### 7. Create admin role
 
 ```sh
 rake db:the_role:admin
