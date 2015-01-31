@@ -57,7 +57,6 @@ It can be usefull for Rails apps based on one engine.
 TheRole uses few conventions over configuration.
 It gives simplicity of code, but also some limitations.
 You have to know about them before using of TheRole:
-
 <a href="https://github.com/TheRole/the_role_api/blob/master/docs/Limitations.md">Limitations list</a>
 
 ## Installation
