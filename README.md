@@ -208,6 +208,19 @@ In this case `login_required` is method `:authenticate_user!` from Devise gem
 
 ## Integration with Rails views
 
+HAML views:
+
+__case 1__
+
+```haml
+- if current_user
+
+  - # if you are owner and has role
+  - if current_user.owner?(@page) && current_user.has_role?(:pages, :edit)
+    = link_to "Edit this Page", edit_page_path(@page)
+```
+
+__case 2__
 
 ```haml
 - if current_user
