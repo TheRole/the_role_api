@@ -361,9 +361,13 @@ new_role_hash = {
 
 ### Limitations by Design
 
-0. Only `User` Model supported   (why?)
-0. Based on `curent_user` method (why?)
-0. `User` **has_one** `Role`     (why?)
+TheRole uses few conventions over configuration.
+It gives simplicity of code, but also some limitations.
+You have to know about them before using of TheRole:
+
+0. `User` **has only one** `Role`  (why?)
+0. Only `User` model supported     (why?)
+0. Based on `curent_user` method   (why?)
 0. Role stored in database as a JSON String (why?)
 
 ### MIT License
