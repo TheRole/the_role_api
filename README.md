@@ -215,7 +215,7 @@ In this case `login_required` is method `:authenticate_user!` from Devise gem
   - if current_user.any_role?(social_networks: [:twitter_share_button, :facebook_share_button])
     %h3 You can share this content with Social Networks:
 
-    - if current_user.has_role?(:social_networks, :share_button)
+    - if current_user.has_role?(:social_networks, :twitter_share_button)
       = link_to 'Share with Twitter', '#'
 
     - if current_user.has_role?(:social_networks, :facebook_share_button)
