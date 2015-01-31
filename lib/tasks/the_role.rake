@@ -1,16 +1,16 @@
 namespace :db do
-  namespace :roles do
-    # rake db:roles:admin
+  namespace :the_role do
+
+    # rake db:the_role:admin
     desc 'create Admin Role'
     task :admin => :environment do
-      puts `clear`
-
       unless Role.with_name(:admin)
         TheRole.create_admin!
-        puts "Admin role created"
+        puts "TheRole >>> Admin role created"
       else
-        puts "Admin role exists"
+        puts "TheRole >>> Admin role exists"
       end
     end
+
   end
 end
