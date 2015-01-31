@@ -186,12 +186,13 @@ class PagesController < ApplicationController
   before_action :login_required, except: [ :index, :show ]
   before_action :role_required,  except: [ :index, :show ]
 
-  # !!! WARNING !!!
+  # !!! ATTENTION !!!
   #
-  # `@owner_check_object` variable have to be exists
-  # before check ownership via `owner_required` method
+  # `@owner_check_object` variable have to be instantiated
+  # before check ownership via `owner_required` method.
   #
-  # You have to define `@owner_check_object` in `set_page` method
+  # You have to instantiate `@owner_check_object` in `set_page` method
+  # See code below
 
   before_action :set_page,       only: [ :edit, :update, :destroy ]
   before_action :owner_required, only: [ :edit, :update, :destroy ]
