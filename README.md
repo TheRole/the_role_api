@@ -100,12 +100,6 @@ end
 bundle exec rake the_role_engine:install:migrations
 ```
 
-you will see following line
-
-```sh
-  Copied migration XXXXXXXXXXXXX_create_roles.the_role_engine.rb from the_role_engine
-```
-
 #### Invoke migrations
 
 ```sh
@@ -127,13 +121,6 @@ end
 
 ```sh
 bundle exec rails g the_role install
-```
-
-you will see following lines
-
-```show
-  create  app/models/role.rb
-  create  config/initializers/the_role.rb
 ```
 
 #### Setup TheRole gem
@@ -158,12 +145,6 @@ end
 
 ```sh
 rake db:the_role:admin
-```
-
-you will see following line
-
-```sh
-  TheRole >>> Admin role created
 ```
 
 Now you can make any user an Admin via `rails console`, for instance:
@@ -217,9 +198,9 @@ class PagesController < ApplicationController
 end
 ```
 
-# TheRole API
+## TheRole API
 
-## User
+### User
 
 ```ruby
 # User's role
@@ -259,7 +240,7 @@ Is user **Owner** of object?
 @user.owner?(@article)             => true | false
 ```
 
-## Role
+### Role
 
 ```ruby
 # Find a Role by name
