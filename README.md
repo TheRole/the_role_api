@@ -199,3 +199,11 @@ User.first.admin? # => true
 ### MIT License
 
 Copyright (c) 2012-2015 [Ilya N.Zykin]
+
+#### Maintainers
+
+@the-teacher, @seuros, @sedx
+
+#### Contributors
+
+@igmarin, @doabit, @linjunpop, @egb3
