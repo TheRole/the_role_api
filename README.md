@@ -58,10 +58,10 @@ TheRole uses few conventions over configuration.
 It gives simplicity of code, but also some limitations.
 You have to know about them before using of TheRole:
 
-0. `User` **has only one** `Role`  (why?)
-0. Only `User` model supported     (why?)
-0. Based on `curent_user` method   (why?)
-0. Role stored in database as a JSON String (why?)
+0. `User` **has only one** `Role`           <a href="https://github.com/TheRole/the_role_api/blob/master/docs/Limitations.md#user-has-only-one-role">Why?</a>
+0. Only `User` model supported              <a href="https://github.com/TheRole/the_role_api/blob/master/docs/Limitations.md#only-user-model-supported">Why?</a>
+0. Based on `curent_user` method            <a href="https://github.com/TheRole/the_role_api/blob/master/docs/Limitations.md#based-on-curent_user-method">Why?</a>
+0. Role stored in database as a JSON String <a href="https://github.com/TheRole/the_role_api/blob/master/docs/Limitations.md#role-stored-in-database-as-a-json-string">Why?</a>
 
 ## Installation
 

@@ -24,5 +24,7 @@ There is no ways to use something else. Sorry.
 ### Role stored in database as a JSON String
 
 There are many databases which provide special native ways to work with JSON data.
+
 But TheRole convert hashes into JSON string and store it into database with plain TEXT value.
+
 TheRole uses this approach because it requires less of code. And it makes maintaining simpler.
