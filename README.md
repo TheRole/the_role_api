@@ -52,7 +52,7 @@ It can be usefull for Rails apps based on one engine.
   <img src="./docs/import_export.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
 </div>
 
-### Installation
+## Installation
 
 **Gemfile**
 
@@ -136,6 +136,24 @@ you will see following lines
   create  config/initializers/the_role.rb
 ```
 
+#### Setup TheRole gem
+
+**config/initializers/the_role.rb**
+
+```ruby
+TheRole.configure do |config|
+  # [ Devise => :authenticate_user! | Sorcery => :require_login ]
+  config.login_required_method = :authenticate_user!
+
+  # config.default_user_role          = nil
+  # config.first_user_should_be_admin = false
+
+  # config.access_denied_method       = :access_denied
+  # config.destroy_strategy           = :restrict_with_exception # can be nil
+  # config.layout                     = :application             # layout for Management panel
+end
+```
+
 #### Create admin role
 
 ```sh
@@ -159,7 +177,7 @@ User.first.admin? # => true
 
 **application_controller.rb**
 
-```
+```ruby
 class ApplicationController < ActionController::Base
 
   include TheRole::Controller
@@ -193,7 +211,7 @@ class PagesController < ApplicationController
   def set_page
     @page = Page.find params[:id]
 
-    # TheRole: object ownership checking
+    # TheRole: object for ownership checking
     @owner_check_object = @page
   end
 end
