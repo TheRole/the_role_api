@@ -214,7 +214,7 @@ Please, learn simple source code of restriction methods:
 0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L16">role_required</a>
 0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L20">owner_required</a>
 
-In this case `login_required` is method `:authenticate_user!` from Devise gem
+In this case `login_required` is a method `:authenticate_user!` from Devise gem
 
 ## Integration with Rails views
 
@@ -249,6 +249,25 @@ __case 2__
 
   - if current_user.admin?
     = link_to 'Admin Panel', admin_path
+```
+
+## Using with Strong Parameters
+
+```ruby
+class PagesController < ApplicationController
+  # .. code ...
+
+  private
+
+  def page_params
+    permitted_keys = [:title, :description, :content]
+
+    permitted_keys.push(:tags)       if current_user.has_role?(:pages, :tags)
+    permitted_keys.push(:top_secret) if current_user.admin?
+
+    params.require(:person).permit(permitted_keys)
+  end
+end
 ```
 
 ## TheRole API
