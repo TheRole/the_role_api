@@ -76,7 +76,7 @@ bundle
 
 #### Change User migration file
 
-Add a **role_id:integer** field to your User Model
+Add a `role_id:integer` field to your User Model
 
 ```ruby
 def self.up
@@ -125,7 +125,7 @@ bundle exec rails g the_role install
 
 #### Setup TheRole gem
 
-<i><b>config/initializers/the_role.rb</b></i>
+<i>config/initializers/the_role.rb</i>
 
 ```ruby
 TheRole.configure do |config|
@@ -156,7 +156,7 @@ User.first.admin? # => true
 
 ## Integration with Rails controllers
 
-<i><b>application_controller.rb</b></i>
+<i>application_controller.rb</i>
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -170,7 +170,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-Any Rails controller, for instance, <i><b>pages_controller.rb</b></i>.
+Any Rails controller, for instance, `pages_controller.rb`.
 
 ```ruby
 class PagesController < ApplicationController
@@ -197,6 +197,12 @@ class PagesController < ApplicationController
   end
 end
 ```
+
+0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L3">login_required</a>
+0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L16">role_required</a>
+0. <a href="https://github.com/TheRole/the_role_api/blob/master/app/controllers/concerns/the_role/controller.rb#L20">owner_required</a>
+
+In this case `login_required` is method from Devise gem `:authenticate_user!`
 
 ## TheRole API
 
