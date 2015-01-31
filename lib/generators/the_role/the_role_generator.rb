@@ -5,8 +5,8 @@ class TheRoleGenerator < Rails::Generators::NamedBase
   # bundle exec rails g the_role NAME
   def generate_controllers
     if gen_name == 'install'
-      cp_config
       cp_models
+      cp_config
     elsif gen_name == 'config'
       cp_config
     elsif gen_name == 'models'

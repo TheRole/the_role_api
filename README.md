@@ -52,6 +52,153 @@ It can be usefull for Rails apps based on one engine.
   <img src="./docs/import_export.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
 </div>
 
+### Installation
+
+**Gemfile**
+
+```ruby
+gem 'the_role_api', '~> 3.0.0'
+```
+
+or
+
+```ruby
+gem 'the_role_api',
+  github: 'TheRole/the_role_api',
+  branch: 'master'
+```
+
+and after that
+
+```sh
+bundle
+```
+
+#### Change User migration file
+
+Add a **role_id:integer** field to your User Model
+
+```ruby
+def self.up
+  create_table :users do |t|
+    t.string :login
+    t.string :email
+    t.string :crypted_password
+    t.string :salt
+
+    # !!! TheRole field !!!
+    t.integer :role_id
+
+    t.timestamps
+  end
+end
+```
+
+#### Install TheRole migration file
+
+```sh
+bundle exec rake the_role_engine:install:migrations
+```
+
+you will see following line
+
+```sh
+  Copied migration XXXXXXXXXXXXX_create_roles.the_role_engine.rb from the_role_engine
+```
+
+#### Invoke migrations
+
+```sh
+rake db:migrate
+```
+
+#### Change User model
+
+```ruby
+class User < ActiveRecord::Base
+  # include TheRole::Api::User
+  has_the_role
+
+  # ... code ...
+end
+```
+
+#### Create Role model
+
+```sh
+bundle exec rails g the_role install
+```
+
+you will see following lines
+
+```show
+  create  app/models/role.rb
+  create  config/initializers/the_role.rb
+```
+
+#### Create admin role
+
+```sh
+rake db:the_role:admin
+```
+
+you will see following line
+
+```sh
+  TheRole >>> Admin role created
+```
+
+Now you can make any user an Admin via `rails console`, for instance:
+
+```ruby
+User.first.update( role: Role.with_name(:admin) )
+User.first.admin? # => true
+```
+
+#### Integration with Rails controllers
+
+**application_controller.rb**
+
+```
+class ApplicationController < ActionController::Base
+
+  include TheRole::Controller
+
+  protect_from_forgery with: :exception
+  protect_from_forgery
+
+  # ... code ...
+end
+```
+
+Any Rails controller, for instance, **pages_controller.rb**
+
+```ruby
+class PagesController < ApplicationController
+  before_action :login_required, except: [ :index, :show ]
+  before_action :role_required,  except: [ :index, :show ]
+
+  # !!! WARNING !!!
+  #
+  # `@owner_check_object` variable have to be exists
+  # before check ownership via `owner_required` method
+  #
+  # You have to define `@owner_check_object` in `set_page` method
+
+  before_action :set_page,       only: [ :edit, :update, :destroy ]
+  before_action :owner_required, only: [ :edit, :update, :destroy ]
+
+  private
+
+  def set_page
+    @page = Page.find params[:id]
+
+    # TheRole: object ownership checking
+    @owner_check_object = @page
+  end
+end
+```
+
 # TheRole API
 
 ## User
