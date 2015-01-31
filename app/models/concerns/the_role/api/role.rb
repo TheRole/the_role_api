@@ -60,10 +60,13 @@ module TheRole
 
       def create_section section_name = nil
         return false unless section_name
-        role = to_hash
+
+        role         = to_hash
         section_name = section_name.to_slug_param(sep: '_')
+
         return false if section_name.blank?
         return true  if role[section_name]
+
         role[section_name] = {}
         update(the_role: _jsonable(role))
       end
@@ -72,11 +75,12 @@ module TheRole
         return false if     rule_name.blank?
         return false unless create_section(section_name)
 
-        role = to_hash
+        role         = to_hash
         rule_name    = rule_name.to_slug_param(sep: '_')
         section_name = section_name.to_slug_param(sep: '_')
 
         return true if role[section_name][rule_name]
+
         role[section_name][rule_name] = false
         update(the_role: _jsonable(role))
       end
@@ -84,11 +88,7 @@ module TheRole
       # R
 
       def to_hash
-        #return the hash if activerecord parsed the json from postgresql
-        return the_role if the_role.kind_of? Hash
-        begin
-          JSON.load(the_role) rescue {}
-        end
+        begin JSON.load(the_role) rescue {} end
       end
 
       def to_json
@@ -103,14 +103,16 @@ module TheRole
       # look at lib/the_role/hash.rb to find definition of *underscorify_keys* method
       def update_role new_role_hash
         new_role_hash = new_role_hash.try(:to_hash) || {}
+
         new_role = new_role_hash.underscorify_keys
-        role = to_hash.underscorify_keys.deep_reset(false)
+        role     = to_hash.underscorify_keys.deep_reset(false)
+
         role.deep_merge! new_role
         update(the_role: _jsonable(role))
       end
 
       def rule_on section_name, rule_name
-        role = to_hash
+        role         = to_hash
         rule_name    = rule_name.to_slug_param(sep: '_')
         section_name = section_name.to_slug_param(sep: '_')
 
@@ -123,7 +125,7 @@ module TheRole
       end
 
       def rule_off section_name, rule_name
-        role = to_hash
+        role         = to_hash
         rule_name    = rule_name.to_slug_param(sep: '_')
         section_name = section_name.to_slug_param(sep: '_')
 
@@ -139,6 +141,7 @@ module TheRole
 
       def delete_section section_name = nil
         return false unless section_name
+
         role = to_hash
         section_name = section_name.to_slug_param(sep: '_')
 
@@ -150,7 +153,7 @@ module TheRole
       end
 
       def delete_rule section_name, rule_name
-        role = to_hash
+        role         = to_hash
         rule_name    = rule_name.to_slug_param(sep: '_')
         section_name = section_name.to_slug_param(sep: '_')
 

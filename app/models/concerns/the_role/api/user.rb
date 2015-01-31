@@ -27,7 +27,7 @@ module TheRole
       # Check for owner _object_ if owner field is not :user_id
       def owner? obj
         return false unless obj
-        return true if admin?
+        return true  if admin?
 
         section_name = obj.class.to_s.tableize
         return true if moderator?(section_name)
@@ -36,9 +36,10 @@ module TheRole
         return id == obj.id if obj.is_a?(self.class)
 
         # few ways to define user_id
-        return id == obj.user_id if obj.respond_to? :user_id
-        return id == obj[:user_id] if obj[:user_id]
+        return id == obj.user_id     if obj.respond_to? :user_id
+        return id == obj[:user_id]   if obj[:user_id]
         return id == obj[:user][:id] if obj[:user]
+
         false
       end
 
