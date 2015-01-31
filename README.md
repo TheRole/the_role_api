@@ -165,10 +165,10 @@ User.first.admin? # => true
 
 <hr>
 
-<center>
-  You are in deal!
+<p align="center" class='center' style="text-align:center">
+  You are in deal!<br>
   Thanks for using TheRole!
-</center>
+</p>
 
 <hr>
 
