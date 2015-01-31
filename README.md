@@ -343,7 +343,11 @@ Is user **Owner** of object?
 @role.admin?                    => true | false
 
 # return true if one of roles is true
-@role.any?(pages: :show, posts: :show) => true | false
+@role.any?(pages: :show, posts: :show)     => true | false
+@role.any?(pages: [:show], posts: [:show]) => true | false
+
+@role.any?(pages: [:top_secret])                        => true | false
+@role.any?(pages: [:show, :top_secret], posts: [:edit]) => true | false
 ```
 
 #### CREATE
