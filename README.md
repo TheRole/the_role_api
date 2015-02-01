@@ -175,12 +175,6 @@ User.first.admin? # => true
 
 <div align="center" class='center' style="text-align:center">
   <a href="https://github.com/TheRole/docs/blob/master/TheRoleAPI.md">
-    <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/install_gui.png" alt="TheRole GUI. Installation">
-  </a>
-</div>
-
-<div align="center" class='center' style="text-align:center">
-  <a href="https://github.com/TheRole/docs/blob/master/TheRoleAPI.md">
     <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/install.png?2" alt="TheRole. Installation">
   </a>
 </div>
@@ -209,13 +203,24 @@ User.first.admin? # => true
   </a>
 </div>
 
+<div align="center" class='center' style="text-align:center">
+  <a href="https://github.com/TheRole/docs/blob/master/TheRoleAPI.md">
+    <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/install_gui.png" alt="TheRole GUI. Installation">
+  </a>
+</div>
+
+<hr>
+
 ### MIT License
 
-Copyright (c) 2012-2015 [Ilya N.Zykin]
+[MIT License](https://github.com/TheRole/docs/blob/master/LICENSE.md)
+Copyright (c) 2012-2015 [Ilya N.Zykin](https://github.com/the-teacher)
 
 #### Maintainers
 
-@the-teacher, @seuros, @sedx
+[@the-teacher](https://github.com/the-teacher),
+[@sedx](https://github.com/sedx),
+[@seuros](https://github.com/seuros)
 
 #### Contributors
 
