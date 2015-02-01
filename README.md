@@ -8,7 +8,7 @@
 </p>
 
 <p align="center" class='center' style="text-align:center">
-  <img src="https://raw.githubusercontent.com/TheRole/TheRoleApi/master/docs/the_role.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
+  <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/the_role.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
 </p>
 
 <p align="center" class='center' style="text-align:center">
@@ -31,7 +31,7 @@
 TheRole is an authorization library for Ruby on Rails which restricts what resources a given user is allowed to access. All permissions are defined in with **2-level-hash**, and **stored in the database as a JSON string**.
 
 <p align="center" class='center' style="text-align:center">
-  <img src="./docs/hash2string.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
+  <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/hash2string.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
 </p>
 
 Using hashes, makes role system extremely easy to configure and use
@@ -49,7 +49,7 @@ If you have 2 Rails apps, based on TheRole - you can move roles between them via
 It can be usefull for Rails apps based on one engine.
 
 <div align="center" class='center' style="text-align:center">
-  <img src="./docs/import_export.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
+  <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/import_export.png" alt="TheRole. Authorization gem for Ruby on Rails with Administrative interface">
 </div>
 
 ### Limitations by Design
@@ -57,7 +57,7 @@ It can be usefull for Rails apps based on one engine.
 TheRole uses few conventions over configuration.
 It gives simplicity of code, but also some limitations.
 You have to know about them before using of TheRole:
-<a href="https://github.com/TheRole/the_role_api/blob/master/docs/Limitations.md">Limitations list</a>
+<a href="https://github.com/TheRole/docs/blob/master/Limitations.md">Limitations list</a>
 
 ## Installation
 
@@ -174,26 +174,26 @@ User.first.admin? # => true
 <hr>
 
 <div align="center" class='center' style="text-align:center">
-  <a href="https://github.com/TheRole/the_role_api/blob/master/docs/TheRoleAPI.md">
-    <img src="https://raw.githubusercontent.com/TheRole/the_role_api/master/docs/api.png?1" alt="TheRole API">
+  <a href="https://github.com/TheRole/docs/blob/master/TheRoleAPI.md">
+    <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/api.png" alt="TheRole API">
   </a>
 </div>
 
 <div align="center" class='center' style="text-align:center">
-  <a href="https://github.com/TheRole/the_role_api/blob/master/docs/IntegrationWithRailsControllers.md">
-    <img src="https://raw.githubusercontent.com/TheRole/the_role_api/master/docs/int_ctrl.png" alt="Integration with Rails controllers">
+  <a href="https://github.com/TheRole/docs/blob/master/IntegrationWithRailsControllers.md">
+    <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/int_ctrl.png" alt="Integration with Rails controllers">
   </a>
 </div>
 
 <div align="center" class='center' style="text-align:center">
-  <a href="https://github.com/TheRole/the_role_api/blob/master/docs/IntegrationWithRailsViews.md">
-    <img src="https://raw.githubusercontent.com/TheRole/the_role_api/master/docs/int_views.png" alt="Integration with Rails views">
+  <a href="https://github.com/TheRole/docs/blob/master/IntegrationWithRailsViews.md">
+    <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/int_views.png" alt="Integration with Rails views">
   </a>
 </div>
 
 <div align="center" class='center' style="text-align:center">
-  <a href="https://github.com/TheRole/the_role_api/blob/master/docs/UsingWithStrongParameters.md">
-    <img src="https://raw.githubusercontent.com/TheRole/the_role_api/master/docs/int_params.png" alt="Using with Strong Parameters">
+  <a href="https://github.com/TheRole/docs/blob/master/UsingWithStrongParameters.md">
+    <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/int_params.png" alt="Using with Strong Parameters">
   </a>
 </div>
 
