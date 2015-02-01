@@ -122,7 +122,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def access_denied
-    flash[:error] = t('the_role.access_denied')
+    flash[:error] = t(:access_denied, scope: :the_role)
     redirect_to(:back)
   end
 end

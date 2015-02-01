@@ -22,9 +22,11 @@ module TheRole
     end
 
     def the_role_default_access_denied_response
+      access_denied_msg = t(:access_denied, scope: :the_role)
+
       if request.xhr?
         render json: {
-          errors: { the_role: [ t('the_role.access_denied') ] },
+          errors: { the_role: [ access_denied_msg ] },
 
           controller_name:      controller_path,
           action_name:          action_name,
@@ -40,7 +42,7 @@ module TheRole
           has_access_to_object: current_user.try(:owner?, @owner_check_object)
         }, status: 401
       else
-        redirect_to :back, flash: { error: t('the_role.access_denied') }
+        redirect_to :back, flash: { error: access_denied_msg }
       end
     end
   end

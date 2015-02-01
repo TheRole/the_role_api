@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    models:
+      role: Роль
+    attributes:
+      role:
+        name: Название роли
+        title: Заголовок роли
+        description: Описание роли
+
+  the_role:
+    access_denied: "Доступ запрещен"
