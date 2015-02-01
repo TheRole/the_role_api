@@ -30,13 +30,13 @@
 
 <div align="center" class='center' style="text-align:center">
   <a href="https://github.com/TheRole/docs/blob/master/TheRoleAPI.md">
-    <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/install.png?2" alt="TheRole. Installation">
+    <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/api.png" alt="TheRole API">
   </a>
 </div>
 
 <div align="center" class='center' style="text-align:center">
   <a href="https://github.com/TheRole/docs/blob/master/TheRoleAPI.md">
-    <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/api.png" alt="TheRole API">
+    <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/install.png?2" alt="TheRole. Installation">
   </a>
 </div>
 
