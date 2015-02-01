@@ -13,6 +13,8 @@ class TheRoleGenerator < Rails::Generators::NamedBase
       cp_models
     elsif gen_name == 'controllers'
       cp_controllers
+    elsif gen_name == 'locales'
+      cp_locales
     elsif gen_name == 'help'
       cp_help
     else
@@ -40,6 +42,11 @@ class TheRoleGenerator < Rails::Generators::NamedBase
   def cp_controllers
     directory 'app/controllers',
               'app/controllers'
+  end
+
+  def cp_locales
+    directory 'config/locales',
+              'config/locales'
   end
 
   def cp_help

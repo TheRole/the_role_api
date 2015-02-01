@@ -24,6 +24,9 @@ TheRole
   > bundle exec rails g the_role controllers
   - Install controllers
 
+  > bundle exec rails g the_role locales
+  - Install locales
+
 !!! Rake Tasks:
 
   > rake db:the_role:admin
