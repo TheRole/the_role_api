@@ -59,7 +59,7 @@
 </div>
 
 <div align="center" class='center' style="text-align:center">
-  <a href="https://github.com/TheRole/docs/blob/master/TheRoleAPI.md">
+  <a href="https://github.com/TheRole/docs/blob/master/TheRoleGuiInstallation.md">
     <img src="https://raw.githubusercontent.com/TheRole/docs/master/images/install_gui.png" alt="TheRole GUI. Installation">
   </a>
 </div>
