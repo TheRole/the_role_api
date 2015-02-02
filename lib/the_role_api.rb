@@ -4,14 +4,17 @@ require 'the_role_api/version'
 
 require 'multi_json'
 require 'the_string_to_slug'
+require 'pry'
 
 module TheRole
+  module Api; end
+
   class << self
     def create_admin!
       admin_role = ::Role.where(name: :admin).first_or_create!(
-          name:        :admin,
-          title:       "Role for admin",
-          description: "This user can do anything"
+        name:        :admin,
+        title:       "Role for admin",
+        description: "This user can do anything"
       )
       admin_role.create_rule(:system, :administrator)
       admin_role.rule_on(:system, :administrator)
@@ -20,8 +23,19 @@ module TheRole
   end
 
   class Engine < Rails::Engine
-    config.autoload_paths << "#{ config.root }/app/models/concerns/**"
-    config.autoload_paths << "#{ config.root }/app/controllers/concerns/**"
+    # Right now I don't why, but autoload_paths doesn't work with Rails 3
+    # Patch it if you know how
+    if Rails::VERSION::MAJOR == 3
+      require "#{ config.root }/app/controllers/concerns/the_role/controller.rb"
+      %w[ base role user ].each do |file|
+        require "#{ config.root }/app/models/concerns/the_role/api/#{ file }.rb"
+      end
+    end
+
+    if Rails::VERSION::MAJOR == 4
+      config.autoload_paths << "#{ config.root }/app/models/concerns/**"
+      config.autoload_paths << "#{ config.root }/app/controllers/concerns/**"
+    end
 
     initializer "the_role_precompile_hook", group: :all do |app|
       app.config.assets.precompile += %w(
@@ -45,6 +59,16 @@ end
 #
 # if defined?(ActiveRecord::Base)
 #   ActiveRecord::Base.extend TheRole::Api::ActiveRecord
+# end
+#
+# ==========================================================================================
+#
+# A note on Decorators and Loading Code # http://guides.rubyonrails.org/engines.html
+#
+# config.to_prepare do
+#   Dir.glob(Rails.root + "app/decorators/**/*_decorator*.rb").each do |c|
+#     require_dependency(c)
+#   end
 # end
 #
 # ==========================================================================================

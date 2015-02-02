@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'multi_json'
   s.add_dependency 'the_string_to_slug', '~> 1.2'
-  s.add_runtime_dependency 'rails', ['>= 4', '< 5']
+  s.add_runtime_dependency 'rails', ['>= 3.2', '< 5']
 end

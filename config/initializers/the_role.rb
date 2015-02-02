@@ -9,7 +9,10 @@ TheRole.configure do |config|
 
   # config.default_user_role          = nil
   # config.first_user_should_be_admin = false
-
   # config.access_denied_method       = :access_denied
-  # config.destroy_strategy           = :restrict_with_exception # can be nil
+
+  # Dependent of Rails::VERSION
+  #
+  # [ :destroy, :delete_all, :nullify, :restrict, :restrict_with_exception, :restrict_with_error ]
+  # config.destroy_strategy = nil
 end

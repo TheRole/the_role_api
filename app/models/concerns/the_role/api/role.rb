@@ -68,7 +68,7 @@ module TheRole
         return true  if role[section_name]
 
         role[section_name] = {}
-        update(the_role: _jsonable(role))
+        update_attribute(:the_role, _jsonable(role))
       end
 
       def create_rule section_name, rule_name
@@ -82,7 +82,7 @@ module TheRole
         return true if role[section_name][rule_name]
 
         role[section_name][rule_name] = false
-        update(the_role: _jsonable(role))
+        update_attribute(:the_role,  _jsonable(role))
       end
 
       # R
@@ -108,7 +108,7 @@ module TheRole
         role     = to_hash.underscorify_keys.deep_reset(false)
 
         role.deep_merge! new_role
-        update(the_role: _jsonable(role))
+        update_attribute(:the_role,  _jsonable(role))
       end
 
       def rule_on section_name, rule_name
@@ -121,7 +121,7 @@ module TheRole
         return true  if     role[section_name][rule_name]
 
         role[section_name][rule_name] = true
-        update(the_role: _jsonable(role))
+        update_attribute(:the_role,  _jsonable(role))
       end
 
       def rule_off section_name, rule_name
@@ -134,7 +134,7 @@ module TheRole
         return true  unless role[section_name][rule_name]
 
         role[section_name][rule_name] = false
-        update(the_role: _jsonable(role))
+        update_attribute(:the_role,  _jsonable(role))
       end
 
       # D
@@ -149,7 +149,7 @@ module TheRole
         return false unless role[section_name]
 
         role.delete section_name
-        update(the_role: _jsonable(role))
+        update_attribute(:the_role,  _jsonable(role))
       end
 
       def delete_rule section_name, rule_name
@@ -161,7 +161,7 @@ module TheRole
         return false unless role[section_name].key? rule_name
 
         role[section_name].delete rule_name
-        update(the_role: _jsonable(role))
+        update_attribute(:the_role,  _jsonable(role))
       end
     end
   end
