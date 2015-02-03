@@ -13,6 +13,10 @@ module TheRole
 
     private
 
+    def for_ownership_check obj
+      @owner_check_object = obj
+    end
+
     def role_required
       role_access_denied unless current_user.try(:has_role?, controller_path, action_name)
     end
