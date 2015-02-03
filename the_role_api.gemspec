@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+  s.license       = "MIT"
 
   s.add_dependency 'multi_json', '~> 0'
   s.add_dependency 'the_string_to_slug', '~> 1.2'
