@@ -1,6 +1,6 @@
 module TheRole
   module Api
-    module Base
+    module BaseMethods
       def has_section? section_name
         hash         =  role_hash
         section_name =  section_name.to_slug_param(sep: '_')

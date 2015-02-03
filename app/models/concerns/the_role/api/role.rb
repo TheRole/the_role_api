@@ -3,7 +3,7 @@ module TheRole
     module Role
       extend ActiveSupport::Concern
 
-      include TheRole::Api::Base
+      include TheRole::Api::BaseMethods
 
       def the_role= val
         self[:the_role] = _jsonable val

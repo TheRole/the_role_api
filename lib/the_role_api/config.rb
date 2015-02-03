@@ -24,7 +24,7 @@ module TheRole
     config.default_user_role          = nil
     config.access_denied_method       = nil
     config.login_required_method      = nil
+    config.destroy_strategy           = nil
     config.first_user_should_be_admin = false
-    config.destroy_strategy           = :nullify
   end
 end

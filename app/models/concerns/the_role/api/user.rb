@@ -3,7 +3,7 @@ module TheRole
     module User
       extend ActiveSupport::Concern
 
-      include TheRole::Api::Base
+      include TheRole::Api::BaseMethods
 
       included do
         belongs_to :role
