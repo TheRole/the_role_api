@@ -52,7 +52,7 @@ module TheRole
         end
 
         if self.class.count.zero? && TheRole.config.first_user_should_be_admin
-          self.role = TheRole.create_admin_role!
+          self.role = TheRole.create_admin!
         end
       end
     end
