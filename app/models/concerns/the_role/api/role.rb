@@ -5,13 +5,29 @@ module TheRole
 
       include TheRole::Api::BaseMethods
 
+      # HELPERS
+
+      # version for `Role` model
+      def role_hash
+        to_hash
+      end
+
       def the_role= val
         self[:the_role] = _jsonable val
       end
 
-      def role_hash;
-        to_hash;
+      def _jsonable val
+        val.is_a?(Hash) ? val.to_json : val.to_s
       end
+
+      def to_hash
+        begin JSON.load(the_role) rescue {} end
+      end
+
+      def to_json
+        the_role
+      end
+      # ~ HELPERS
 
       alias_method :has?, :has_role?
       alias_method :any?, :any_role?
@@ -54,9 +70,6 @@ module TheRole
       end
 
       # C
-      def _jsonable val
-        val.is_a?(Hash) ? val.to_json : val.to_s
-      end
 
       def create_section section_name = nil
         return false unless section_name
@@ -83,16 +96,6 @@ module TheRole
 
         role[section_name][rule_name] = false
         update_attribute(:the_role,  _jsonable(role))
-      end
-
-      # R
-
-      def to_hash
-        begin JSON.load(the_role) rescue {} end
-      end
-
-      def to_json
-        the_role
       end
 
       # U

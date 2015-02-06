@@ -5,6 +5,12 @@ module TheRole
 
       include TheRole::Api::BaseMethods
 
+      # HELPERS
+      # version for `User`  model
+      def role_hash
+        @role_hash ||= role.try(:to_hash) || {}
+      end
+
       included do
         belongs_to :role
         before_validation :set_default_role, on: :create
@@ -15,10 +21,6 @@ module TheRole
         def with_role name
           ::Role.where(name: name).first.users
         end
-      end
-
-      def role_hash;
-        @role_hash ||= role.try(:to_hash) || {}
       end
 
       # FALSE if object is nil
