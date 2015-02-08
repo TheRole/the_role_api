@@ -27,6 +27,7 @@ module TheRole
       def to_json
         the_role
       end
+
       # ~ HELPERS
 
       alias_method :has?, :has_role?
@@ -55,7 +56,7 @@ module TheRole
         end
 
         after_create do
-          unless based_on_role.blank?
+          if based_on_role.present?
             if base_role = self.class.where(id: based_on_role).first
               update_role base_role.to_hash
             end
