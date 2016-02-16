@@ -46,7 +46,12 @@ module TheRole
           has_access_to_object: current_user.try(:owner?, @owner_check_object)
         }, status: 401
       else
-        redirect_to :back, flash: { error: access_denied_msg }
+        # When the user paste non authorized URL in browser the REFERER is blank and application crash
+        if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
+          redirect_to :back, flash: { error: access_denied_msg }
+        else
+          redirect_to root_path, flash: { error: access_denied_msg }
+        end
       end
     end
   end
