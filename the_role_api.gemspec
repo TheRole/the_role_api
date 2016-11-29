@@ -18,6 +18,6 @@ Gem::Specification.new do |s|
   s.license       = "MIT"
 
   s.add_dependency 'multi_json'
-  s.add_dependency 'the_string_to_slug', '~> 1.2'
+  s.add_dependency 'the_string_to_slug', '~> 1.3'
   s.add_runtime_dependency 'rails', ['>= 3.2', '< 6']
 end
