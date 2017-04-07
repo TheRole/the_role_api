@@ -6,6 +6,7 @@ TheRole.configure do |config|
 
   # layout for Management panel
   # config.layout = :the_role_management_panel
+  # config.layout_title = 'The Role Gem'
 
   # config.default_user_role          = nil
   # config.first_user_should_be_admin = false

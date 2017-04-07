@@ -11,6 +11,7 @@ module TheRole
   class Configuration
     include ActiveSupport::Configurable
     config_accessor :layout,
+                    :layout_title,
                     :destroy_strategy,
                     :default_user_role,
                     :access_denied_method,
@@ -20,6 +21,7 @@ module TheRole
 
   configure do |config|
     config.layout = :application
+    config.layout_title = 'The Role Gem'
 
     config.default_user_role          = nil
     config.access_denied_method       = nil
