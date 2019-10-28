@@ -1,3 +1,3 @@
-class Role < ActiveRecord::Base
+class Role < ApplicationRecord
   include TheRole::Api::Role
 end
