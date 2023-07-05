@@ -15,7 +15,7 @@ module TheRole
       # ~ HELPERS
 
       included do
-        belongs_to :role
+        belongs_to :role, optional: true
         before_validation :set_default_role, on: :create
         after_save { |user| user.instance_variable_set(:@role_hash, nil) }
       end
