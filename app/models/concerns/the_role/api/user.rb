@@ -15,7 +15,10 @@ module TheRole
       # ~ HELPERS
 
       included do
-        belongs_to :role, optional: true
+        role_options = {}
+        role_options = { optional: true } if Rails.version[0..2].to_f >= 5.1
+
+        belongs_to :role, role_options
         before_validation :set_default_role, on: :create
         after_save { |user| user.instance_variable_set(:@role_hash, nil) }
       end
