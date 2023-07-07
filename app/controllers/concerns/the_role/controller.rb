@@ -48,7 +48,8 @@ module TheRole
       else
         # When the user paste non authorized URL in browser the REFERER is blank and application crash
         if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
-          redirect_back fallback_location: root_path, flash: { error: access_denied_msg }
+          # redirect_back fallback_location: root_path
+          redirect_to root_path, flash: { error: access_denied_msg }
         else
           redirect_to root_path, flash: { error: access_denied_msg }
         end
